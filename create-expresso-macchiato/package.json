@@ -1,0 +1,24 @@
+{
+  "name": "create-expresso-macchiato",
+  "version": "0.3.8",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create-expresso-macchiato": "index.js"
+  },
+
+  "scripts": {
+    "build": "tsup index.ts --format cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "degit": "^2.8.4"
+  },
+  "devDependencies": {
+    "@types/degit": "^2.8.6",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
