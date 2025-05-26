@@ -7,10 +7,6 @@
   <a href="https://github.com/alessioVelluso/ExpressoMacchiato/stargazers">
     <img src="https://img.shields.io/github/stars/alessioVelluso/ExpressoMacchiato?style=social" alt="GitHub stars" />
   </a>
-  <!-- 📄 Licenza -->
-  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/alessioVelluso/ExpressoMacchiato" alt="License" />
-  </a>
   <!-- 🐛 Issues aperti -->
   <a href="https://github.com/alessioVelluso/ExpressoMacchiato/issues">
     <img src="https://img.shields.io/github/issues/alessioVelluso/ExpressoMacchiato" alt="GitHub issues" />
