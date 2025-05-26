@@ -1,47 +1,43 @@
-# ☕ Expresso-macchiato
+<p align="center">
+  <img src="./_github_assets/expresso-macchiato.svg" style="height: 220px;" />
+</p>
 
-<div style="width: 100%; text-align: center; margin: 20px 0;">
-<h3>
-    <img
-        src="./_github_assets/expresso-macchiato.svg"
-        style="height: 220px;"
-    >
-</h3>
-</div>
+<p align="center">
+  <!-- ⭐ GitHub Stars -->
+  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/stargazers">
+    <img src="https://img.shields.io/github/stars/alessioVelluso/ExpressoMacchiato?style=social" alt="GitHub stars" />
+  </a>
+  <!-- 📄 Licenza -->
+  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/alessioVelluso/ExpressoMacchiato" alt="License" />
+  </a>
+  <!-- 🐛 Issues aperti -->
+  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/issues">
+    <img src="https://img.shields.io/github/issues/alessioVelluso/ExpressoMacchiato" alt="GitHub issues" />
+  </a>
+  <!-- 🔃 Pull Requests -->
+  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/pulls">
+    <img src="https://img.shields.io/github/issues-pr/alessioVelluso/ExpressoMacchiato" alt="GitHub pull requests" />
+  </a>
+  <!-- 📦 Ultima Release -->
+  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/releases">
+    <img src="https://img.shields.io/github/v/release/alessioVelluso/ExpressoMacchiato" alt="GitHub release" />
+  </a>
+</p>
 
-<div style="text-align:center; width:100%;">
-<!-- ⭐ GitHub Stars -->
-<a href="https://github.com/alessioVelluso/SuperExpress/stargazers">
-  <img src="https://img.shields.io/github/stars/alessioVelluso/SuperExpress?style=social" alt="GitHub stars" />
-</a>
-<!-- 📄 Licenza -->
-<a href="https://github.com/alessioVelluso/SuperExpress/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/alessioVelluso/SuperExpress" alt="License" />
-</a>
-<!-- 🐛 Issues aperti -->
-<a href="https://github.com/alessioVelluso/SuperExpress/issues">
-  <img src="https://img.shields.io/github/issues/alessioVelluso/SuperExpress" alt="GitHub issues" />
-</a>
-<!-- 🔃 Pull Requests -->
-<a href="https://github.com/alessioVelluso/SuperExpress/pulls">
-  <img src="https://img.shields.io/github/issues-pr/alessioVelluso/SuperExpress" alt="GitHub pull requests" />
-</a>
-<!-- 📦 Ultima Release -->
-<a href="https://github.com/alessioVelluso/SuperExpress/releases">
-  <img src="https://img.shields.io/github/v/release/alessioVelluso/SuperExpress" alt="GitHub release" />
-</a>
-</div>
-
-<div style="text-align:center; width:100%; margin-bottom: 20px;">
-<img src="https://img.shields.io/badge/typescript-5.3.3-blue" alt="Typescript" />
-<img src="https://img.shields.io/badge/express-4.18.2-teal" alt="Express" />
-<img src="https://img.shields.io/badge/typeorm-0.3.21-teal" alt="TypeORM" />
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/typescript-5.3.3-blue" alt="Typescript" />
+  <img src="https://img.shields.io/badge/express-4.18.2-teal" alt="Express" />
+  <img src="https://img.shields.io/badge/typeorm-0.3.21-teal" alt="TypeORM" />
+</p>
 
 
-> 💡 **Check the full documentation**\
-> 👉 Visit [expresso-macchiato docs](https://alessios-books.gitbook.io/expresso-macchiato) for the full API reference and guides.
-
+<br>
+<p align="center" style="font-size: 1.2rem;">
+  💡 <strong>Check the full documentation</strong><br>
+  👉 Visit <a href="https://alessios-books.gitbook.io/expresso-macchiato">expresso-macchiato docs</a> for the full API reference and guides.
+</p>
+<br>
 
 
 ## 🧘 Relax. Let expresso-macchiato handle it.
