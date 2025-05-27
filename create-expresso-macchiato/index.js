@@ -81,8 +81,8 @@ DB_NAME="db/expresso.db"
 MINIO_ENDPOINT="127.0.0.1"
 MINIO_PORT=9000
 MINIO_SSL=false
-MINIO_ACCESS_KEY="youraccesskeytoken"
-MINIO_SECRET_KEY="yoursecretkeytoken"
+MINIO_ACCESS_KEY="in minio container you can use your root username but in prod use amazon s3 keys"
+MINIO_SECRET_KEY="in minio container you can use your root password but in prod use amazon s3 keys"
     `.trim();
 
     fs.writeFileSync(path.join(targetPath, ".env"), envContent);
