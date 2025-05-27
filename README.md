@@ -4,20 +4,20 @@
 
 <p align="center">
   <!-- ⭐ GitHub Stars -->
-  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/stargazers">
-    <img src="https://img.shields.io/github/stars/alessioVelluso/ExpressoMacchiato?style=social" alt="GitHub stars" />
+  <a href="https://github.com/ExpressoMacchiato/ExpressoMacchiato/stargazers">
+    <img src="https://img.shields.io/github/stars/ExpressoMacchiato/ExpressoMacchiato?style=social" alt="GitHub stars" />
   </a>
   <!-- 🐛 Issues aperti -->
-  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/issues">
-    <img src="https://img.shields.io/github/issues/alessioVelluso/ExpressoMacchiato" alt="GitHub issues" />
+  <a href="https://github.com/ExpressoMacchiato/ExpressoMacchiato/issues">
+    <img src="https://img.shields.io/github/issues/ExpressoMacchiato/ExpressoMacchiato" alt="GitHub issues" />
   </a>
   <!-- 🔃 Pull Requests -->
-  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/pulls">
-    <img src="https://img.shields.io/github/issues-pr/alessioVelluso/ExpressoMacchiato" alt="GitHub pull requests" />
+  <a href="https://github.com/ExpressoMacchiato/ExpressoMacchiato/pulls">
+    <img src="https://img.shields.io/github/issues-pr/ExpressoMacchiato/ExpressoMacchiato" alt="GitHub pull requests" />
   </a>
   <!-- 📦 Ultima Release -->
-  <a href="https://github.com/alessioVelluso/ExpressoMacchiato/releases">
-    <img src="https://img.shields.io/github/v/release/alessioVelluso/ExpressoMacchiato" alt="GitHub release" />
+  <a href="https://github.com/ExpressoMacchiato/ExpressoMacchiato/releases">
+    <img src="https://img.shields.io/github/v/release/ExpressoMacchiato/ExpressoMacchiato" alt="GitHub release" />
   </a>
 </p>
 
