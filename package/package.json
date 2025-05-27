@@ -38,7 +38,7 @@
     "multer": "^1.4.5-lts.1",
     "node-jose": "^2.2.0",
     "reflect-metadata": "^0.2.2",
-    "utils-logger-av": "^3.2.3",
+    "utils-logger-av": "^4.0.0",
     "utils-stuff": "^4.5.0"
   },
   "peerDependencies": {

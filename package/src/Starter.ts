@@ -21,7 +21,7 @@ export class Starter
 		}
 		catch (err)
 		{
-			log.logError(err);
+			log.error(err);
 		}
 	}
 

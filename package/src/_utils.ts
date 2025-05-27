@@ -13,13 +13,13 @@ class MyLogger extends Logger
     fullLogOk = (service:string, message:string) =>
     {
         this.ok(`[${service.toUpperCase()}]: ${message}`);
-        this.logFile(`[${service.toUpperCase()}]: ${message}`);
+        this.file(`[${service.toUpperCase()}]: ${message}`);
     }
     fullLogNok = (service:string, error:any, ...args:any[]) =>
     {
         const errMessage:string = (error as Error)?.message ?? error
         this.nok(`[${service.toUpperCase()}]: ${errMessage}`);
-        this.logFile(`[${service.toUpperCase()}]: ${errMessage}, ${args.join(',')}`, 'error');
+        this.file(`[${service.toUpperCase()}]: ${errMessage}, ${args.join(',')}`, 'error');
     }
 }
 
