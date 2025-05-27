@@ -97,7 +97,7 @@ export class DynamicDbRouter
             }
             catch(err)
             {
-                errorCatcher(res, err, undefined, `[GET]\t/ => ${(err as Error).message ?? err}`);
+                errorCatcher(res, err, undefined, `[GET]\t${options.basePath}/ => ${(err as Error).message ?? err}`);
             }
         })
 
@@ -122,7 +122,7 @@ export class DynamicDbRouter
             }
             catch(err)
             {
-                errorCatcher(res, err, undefined, `[GET]\t/:id => ${(err as Error).message ?? err}`);
+                errorCatcher(res, err, undefined, `[GET]\t${options.basePath}/:id => ${(err as Error).message ?? err}`);
             }
         })
 
@@ -164,7 +164,7 @@ export class DynamicDbRouter
             }
             catch(err)
             {
-                errorCatcher(res, err, undefined, `[POST]\t/ => ${(err as Error).message ?? err}`);
+                errorCatcher(res, err, undefined, `[POST]\t${options.basePath}/ => ${(err as Error).message ?? err}`);
             }
         })
 
@@ -214,7 +214,7 @@ export class DynamicDbRouter
             }
             catch(err)
             {
-                errorCatcher(res, err, undefined, `[PUT]\t/:id => ${(err as Error).message ?? err}`);
+                errorCatcher(res, err, undefined, `[PUT]\t${options.basePath}/:id => ${(err as Error).message ?? err}`);
             }
         })
 
@@ -245,7 +245,7 @@ export class DynamicDbRouter
             }
             catch(err)
             {
-                errorCatcher(res, err, undefined, `[DELETE]\t/:id => ${(err as Error).message ?? err}`);
+                errorCatcher(res, err, undefined, `[DELETE]\t${options.basePath}/:id => ${(err as Error).message ?? err}`);
             }
         })
 
@@ -292,7 +292,7 @@ export class DynamicDbRouter
         catch(err)
         {
             if (err instanceof EntityMetadataNotFoundError)
-                log.logError(`[${options.entity.name}]\tMetadata required for db routing but not connected on the database`)
+                log.error(`[${options.entity.name}]\tMetadata required for db routing but not connected on the database`)
         }
 
 
