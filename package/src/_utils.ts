@@ -1,4 +1,5 @@
 import { Response } from "express";
+import path from "path";
 import { Logger } from "utils-logger-av";
 import { ErrorsMapping, ExpressReturn } from "../types/generic.sptypes";
 
@@ -43,3 +44,12 @@ export const errorCatcher = (res:Response, err:unknown, errorsList?:ErrorsMappin
     if (!error) res.status(500).send({ message: err.message });
     else res.status(error.status ?? 500).send({ message: error.responseMessage ?? err.message });
 };
+
+
+
+// --- Generics
+export const getCompiledPath = (__filename:string, __dirname:string, pathsWithoutExtension:string[]) =>
+{
+    const isCompiled = __filename.endsWith('.js');
+    return pathsWithoutExtension.map(p => (path.join(__dirname, p + (isCompiled ? '.js' : '.ts'))).replaceAll('\\', '/'));
+}
