@@ -1,5 +1,20 @@
 # Changelog
 
+<a name="0.3.7"></a>
+## 0.3.7 (2025-05-28)
+
+### Added
+
+- ✅ Tested template v0.3.7 [[8f0bec3](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/8f0bec3b8e6ab172bec9969ba75e2c9ac2ebc208)]
+- 🔊 Updated Logs [[51375b9](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/51375b922a9ab95fc13f68dde5f96d6b1ab7355c)]
+- 👷‍♂️ Updated create-expresso-macchiato script [[94cd553](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/94cd5536e763f2c8dd09b40e8f051a9ebab392b5)]
+
+### Miscellaneous
+
+- 🧑‍💻 Ts Or Js Db folders have now an utility function. [[2d5b403](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/2d5b4031721772c45f159559a9fa6149cbebbe78)]
+- 📝 Updated Readme [[fe3f959](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/fe3f9591b6c2d348436d8975df5ca4d7aeda4843)]
+
+
 <a name="0.3.3"></a>
 ## 0.3.3 (2025-05-27)
 
