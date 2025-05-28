@@ -19,7 +19,7 @@ export class DbConnector
     {
         try
         {
-            if (!this.projectConfig.DB_DIALECT || !this.projectConfig.DB_NAME) throw new Error("[DB-CONNECTOR]\tMissing configs =>DB_DIALECT || DB_NAME");
+            if (!this.projectConfig.DB_DIALECT || !this.projectConfig.DB_NAME) throw new Error("[DB-CONNECTOR] Missing configs => DB_DIALECT || DB_NAME");
 
             const AppDataSource = new DataSource({
                 type:this.projectConfig.DB_DIALECT as "postgres" | "mysql" | "sqlite",
@@ -64,7 +64,7 @@ export class DbConnector
         }
         catch(err)
         {
-            log.logError(err)
+            log.error(err)
         }
     }
 }

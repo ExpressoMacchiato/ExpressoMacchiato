@@ -80,7 +80,7 @@ export class RouterWrapper
                     }
                     catch(err)
                     {
-                        fullLogNok('api', `[${method}]\t${path} => ${(err as Error).message ?? err}`);
+                        fullLogNok('api', `[${method}] ${this.data.basePath}${path} => ${(err as Error).message ?? err}`);
                         res.status(500).send((err as Error)?.message ?? err);
                     }
                 }
