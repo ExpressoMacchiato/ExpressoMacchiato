@@ -5,7 +5,7 @@ const path = require("path");
 const { execSync } = require("child_process");
 const readline = require("readline");
 
-const GIT_REPO = "https://github.com/alessioVelluso/CreateExpressoMacchiato.git";
+const GIT_REPO = "https://github.com/ExpressoMacchiato/CreateExpressoMacchiato.git";
 const projectName = process.argv[2];
 const targetPath = projectName
     ? path.resolve(process.cwd(), projectName)
