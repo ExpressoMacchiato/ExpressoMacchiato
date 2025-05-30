@@ -2,6 +2,7 @@ import { Response } from "express";
 import path from "path";
 import { Logger } from "utils-logger-av";
 import { ErrorsMapping, ExpressReturn } from "../types/generic.sptypes";
+import { SocketConnectionNok, SocketConnectionOk } from "../types/socket.sptypes";
 
 // --- Logs
 class MyLogger extends Logger
@@ -16,11 +17,14 @@ class MyLogger extends Logger
         this.ok(`[${service.toUpperCase()}]: ${message}`);
         this.file(`[${service.toUpperCase()}]: ${message}`);
     }
-    fullLogNok = (service:string, error:any, ...args:any[]) =>
+    fullLogNok = (service:string, ...args:any[]) =>
     {
-        const errMessage:string = (error as Error)?.message ?? error
-        this.nok(`[${service.toUpperCase()}]: ${errMessage}`);
-        this.file(`[${service.toUpperCase()}]: ${errMessage}, ${args.join(',')}`, 'error');
+        let finalString = `[${service.toUpperCase()}]: `;
+        for (let i = 0; i < args.length; i++) if (i === args.length - 1) finalString += (args[i] as Error)?.message ?? args[i];
+        else finalString += args[i] + ' ';
+
+        this.nok(`[${service.toUpperCase()}]: ${finalString}`);
+        this.file(`[${service.toUpperCase()}]: ${finalString}`, 'error');
     }
 }
 
@@ -46,8 +50,13 @@ export const errorCatcher = (res:Response, err:unknown, errorsList?:ErrorsMappin
 };
 
 
+// --- Sockets
+export const socketOk = <T extends Record<string, any> = any>(newMetadata?:T):SocketConnectionOk => ({ ok:true, newMetadata:newMetadata });
+export const socketNok = (message:string):SocketConnectionNok => ({ ok:false, message });
+
 
 // --- Generics
+export const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
 export const getCompiledPath = (__filename:string, __dirname:string, pathsWithoutExtension:string[]) =>
 {
     const isCompiled = __filename.endsWith('.js');
