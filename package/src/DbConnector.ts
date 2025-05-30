@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { DataSource, EntitySchema, MixedList } from "typeorm";
 import { ProjectConfigs } from "../types/generic.sptypes";
-import { log } from "./_utils";
+import { fullLogNok, log } from "./_utils";
 
 
 export class DbConnector
@@ -64,7 +64,7 @@ export class DbConnector
         }
         catch(err)
         {
-            log.error(err)
+            fullLogNok('DB-CONNECTOR', err)
         }
     }
 }

@@ -3,7 +3,7 @@ import { DynamicDbRouterOptions } from "../types/db.sptypes";
 import { ListOptions, Methods, SearchQuery } from "../types/generic.sptypes";
 import { Parameter, ParameterType, Schema } from "../types/swagger.sptypes";
 import { DefaultTokenPayload, SecureTokenConfig } from "../types/token.sptypes";
-import { errorCatcher, log } from "./_utils";
+import { errorCatcher, fullLogNok } from "./_utils";
 import { DbConnector } from "./DbConnector";
 import { Swagger } from "./Swagger";
 import { Token } from "./Token";
@@ -292,7 +292,7 @@ export class DynamicDbRouter
         catch(err)
         {
             if (err instanceof EntityMetadataNotFoundError)
-                log.error(`[${options.entity.name}] Metadata required for db routing but not connected on the database`)
+                fullLogNok('DYNAMIC-DB-ROUTING', `[${options.entity.name}] Metadata required for db routing but not connected on the database`)
         }
 
 
