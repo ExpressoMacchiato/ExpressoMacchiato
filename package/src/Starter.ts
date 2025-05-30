@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import http from 'http';
 import path from "path";
+import { Server } from "socket.io";
 import swaggerUi from "swagger-ui-express";
 import { EntitySchema, MixedList } from "typeorm";
 import { ProjectConfigs } from "../types/generic.sptypes";
@@ -8,7 +9,7 @@ import { StarterOptions } from "../types/starter.sptypes";
 import { DbConnector } from "./DbConnector";
 import { DynamicDbRouter } from "./DynamicDbRouter";
 import { Swagger } from "./Swagger";
-import { log } from "./_utils";
+import { fullLogNok, log } from "./_utils";
 
 export class Starter
 {
@@ -21,7 +22,7 @@ export class Starter
 		}
 		catch (err)
 		{
-			log.error(err);
+			fullLogNok('starter', err);
 		}
 	}
 
@@ -77,17 +78,24 @@ export class Starter
 		}
 
 
+		// --- Start Background Services
+		for (const service of options.backgroundServices ?? []) service.main();
+
+
 		// --- Listen App
-		if (options.socket === undefined || options.socket === false)
+		if (options.sockets === undefined)
 		{
 			// --- Before App Listening
         	if (options.beforeStartListening) options.beforeStartListening(app);
 			app.listen(options.projectConfig.SERVER_PORT, () => log.base("Server started.", `Listening on port ${options.projectConfig.SERVER_PORT}`));
 		}
-		else if (options.socket === true)
+		else
 		{
-			const server = http.createServer(app)
-			if (options.beforeStartListening) options.beforeStartListening(app, server);
+			const server = http.createServer(app);
+			const socketIoServerInstance = new Server(server, options.sockets.options);
+			for (const socket of options.sockets.wrappers) socket.setupConnection(socketIoServerInstance);
+			if (options.beforeStartListening) options.beforeStartListening(app, server, socketIoServerInstance);
+
 			server.listen(options.projectConfig.SERVER_PORT, () => log.base("Server started.", `Listening on port ${options.projectConfig.SERVER_PORT}`))
 		}
 	};

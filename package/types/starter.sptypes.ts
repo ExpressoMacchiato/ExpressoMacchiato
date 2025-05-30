@@ -2,6 +2,7 @@ import { Express } from "express"
 import http from "http"
 import { Server, ServerOptions } from "socket.io"
 import { EntitySchema, MixedList } from "typeorm"
+import { BackgroundService } from "../src/BackgroundService"
 import { RouterWrapper } from "../src/RouterWrapper"
 import { SocketWrapper } from "../src/SocketWrapper"
 import { Token } from "../src/Token"
@@ -29,4 +30,5 @@ export type StarterOptions = {
         sync?:boolean,
         afterDbConnection?:() => Promise<void>
     },
+    backgroundServices?:Array<BackgroundService>
 }
