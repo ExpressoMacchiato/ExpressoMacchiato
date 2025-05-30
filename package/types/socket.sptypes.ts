@@ -18,6 +18,6 @@ export type SocketWrapperConstructor<Metadata extends Record<string, any> = any>
     clientConnectionKey?:string,
     connectionMiddleware?:SocketConnectionMiddleware<Metadata>
     afterClientConnect?: (self:SocketWrapper, client:Socket, metadata?:Metadata) => Promise<void>
-    onClientDisconnect?:(...params:any[]) => Promise<void>
+    onClientDisconnect?:(self:SocketWrapper, client:Socket, ...params:any[]) => Promise<void>
     listeners?:Record<string, (self:SocketWrapper, client:Socket, metadata:any, ...params:any[]) => Promise<void>>
 }

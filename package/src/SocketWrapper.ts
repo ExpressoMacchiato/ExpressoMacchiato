@@ -84,7 +84,7 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
 
             this.connectedClients.delete(client.id);
 
-            if (this.data.onClientDisconnect) this.data.onClientDisconnect(client);
+            if (this.data.onClientDisconnect) this.data.onClientDisconnect(this, client);
         }
         catch (err)
         {
