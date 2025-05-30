@@ -18,7 +18,7 @@ export type StarterOptions = {
     beforeStartListening?:(app:Express, httpServer?:http.Server, socketIoServerInstance?:Server) => void,
     sockets?: {
         wrappers:Array<SocketWrapper>,
-        options?:ServerOptions
+        options?:Partial<ServerOptions>
     },
     tokenOptions?: {
         tokenInstance: Token,

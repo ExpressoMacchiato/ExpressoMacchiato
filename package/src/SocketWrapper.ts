@@ -31,7 +31,7 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
             // Before Connection Middleware
             if (this.data.connectionMiddleware)
             {
-                io.use(async (client, next) =>
+                this.namespace.use(async (client, next) =>
                 {
                     const commId = client.handshake.query.commId as string | undefined;
                     const metadata = client.handshake.query.metadata as Metadata | undefined;
@@ -49,7 +49,7 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
             }
 
             // Connection Event
-            io.on('connection', (client) =>
+            this.namespace.on('connection', (client) =>
             {
                 try
                 {
