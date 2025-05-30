@@ -1,6 +1,6 @@
 {
   "name": "expresso-macchiato",
-  "version": "0.3.7",
+  "version": "0.3.8-dev",
   "author": "Alessio Velluso",
   "license": "MIT",
   "description": "Description",
@@ -33,11 +33,12 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1",
     "multer": "^1.4.5-lts.1",
     "node-jose": "^2.2.0",
     "reflect-metadata": "^0.2.2",
+    "socket.io": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "utils-logger-av": "^4.0.0",
     "utils-stuff": "^4.5.0"
   },
