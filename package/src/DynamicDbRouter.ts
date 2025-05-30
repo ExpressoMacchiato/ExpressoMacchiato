@@ -260,7 +260,7 @@ export class DynamicDbRouter
         try
         {
             let schemaProperties:{ [key:string]: Schema } = {}
-            if (options.bodyParameters && options.bodyParameters)
+            if (options.bodyParameters)
             {
                 const defaultOverridingSchema = options.bodyParameters;
                 for (const param in defaultOverridingSchema.properties)

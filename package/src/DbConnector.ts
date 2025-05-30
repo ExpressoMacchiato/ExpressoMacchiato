@@ -49,7 +49,7 @@ export class DbConnector
                         if (executedMigrationNames.includes(migration)) log.gray(`- Migration ${migration} already executed, skipping.`);
                         else
                         {
-                            log.yellow(`- Executing migration ${migration}`);
+                            log.gray(`- Executing migration ${migration}`);
                             await AppDataSource.runMigrations();  // Esegui le migration
                         }
                     }
