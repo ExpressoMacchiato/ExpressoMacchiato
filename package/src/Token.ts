@@ -39,8 +39,14 @@ export class Token<Payload extends Record<string, any> = DefaultTokenPayload>
     }
 
     // Metodo per autorizzare una richiesta
-    public authorize = async (req: Request):Promise<Payload> =>
+    public authorize = async (req: Request | string):Promise<Payload> =>
     {
+        if (typeof req === 'string')
+        {
+            const payload = await this.verifyJWE(req);
+            return payload;
+        }
+
         const token = req.headers.authorization?.split('Bearer ')?.[1] ?? null;
         if (token === null) throw new Error('UNAUTH');
 

@@ -1,7 +1,9 @@
 import { Express } from "express"
 import http from "http"
+import { Server, ServerOptions } from "socket.io"
 import { EntitySchema, MixedList } from "typeorm"
 import { RouterWrapper } from "../src/RouterWrapper"
+import { SocketWrapper } from "../src/SocketWrapper"
 import { Token } from "../src/Token"
 import { ProjectConfigs } from "./generic.sptypes"
 import { TokenApiOptions } from "./token.sptypes"
@@ -12,8 +14,11 @@ export type StarterOptions = {
     clientPath?:string,
     swagger?:boolean,
     projectConfig:ProjectConfigs,
-    beforeStartListening?:(app:Express, server?:http.Server) => void,
-    socket?:boolean,
+    beforeStartListening?:(app:Express, httpServer?:http.Server, socketIoServerInstance?:Server) => void,
+    sockets?: {
+        wrappers:Array<SocketWrapper>,
+        options?:ServerOptions
+    },
     tokenOptions?: {
         tokenInstance: Token,
         api?:TokenApiOptions
@@ -24,13 +29,4 @@ export type StarterOptions = {
         sync?:boolean,
         afterDbConnection?:() => Promise<void>
     },
-}
-
-
-
-export type SocketWrapperConstructor = {
-    name:string,
-    beforeConnection?:() => Promise<void>
-    onDisconnect?:(...params:any[]) => Promise<void>
-    listeners?:Record<string, (...params:any[]) => Promise<void>>
 }
