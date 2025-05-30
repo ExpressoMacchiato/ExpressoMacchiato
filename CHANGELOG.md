@@ -1,5 +1,28 @@
 # Changelog
 
+<a name="0.4.0"></a>
+## 0.4.0 (2025-05-30)
+
+### Added
+
+- ✅ create-expresso-macchiato test ok [[391a4b9](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/391a4b9e4ed5b73320c3372185c8ff85e89e96ee)]
+- ✨ Socket Wrapper test finished [[1e074af](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/1e074afa64119267d81964c31eafb00e9a48ebe8)]
+- 🔊 Updated logs [[6ad04b1](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/6ad04b1daf61ebd898de455ef5aaf21b10e236a1)]
+- ✨ BackgroundService [[0986730](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/09867307d110f5670a2349b8bfd14d46969c714a)]
+- ✨ Socket Wrapper [[c3e185e](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/c3e185e917a04721f343b5f735000c1105b7c407)]
+- ✨ New utilities and updated some old [[d20d535](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/d20d5350b6faf6a60df7fbe0e2f5cd32830c086f)]
+
+### Changed
+
+- ♻️ SocketWrapper details [[67cc6dc](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/67cc6dc2fc344e0bb3bff7a37d271f33af01ac0a)]
+- ♻️ Details [[dd32778](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/dd3277851b3c2bb75b0ab7ba6c1c2914ce9bb10f)]
+
+### Miscellaneous
+
+- 🚧 Testing SocketWrapper [[4015500](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/4015500c1f659357d1f70aec4e43f243183672ae)]
+- 🚧 Exporting logger icons [[37f699c](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/37f699c1ca1a72a785436e85c7d42bc15ac94c9d)]
+
+
 <a name="0.3.7"></a>
 ## 0.3.7 (2025-05-28)
 
