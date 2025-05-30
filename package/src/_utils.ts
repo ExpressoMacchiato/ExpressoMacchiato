@@ -1,6 +1,6 @@
 import { Response } from "express";
 import path from "path";
-import { Logger } from "utils-logger-av";
+import { Logger, getStringedColor } from "utils-logger-av";
 import { ErrorsMapping, ExpressReturn } from "../types/generic.sptypes";
 import { SocketConnectionNok, SocketConnectionOk } from "../types/socket.sptypes";
 
@@ -29,6 +29,8 @@ class MyLogger extends Logger
 }
 
 export const log:MyLogger = new MyLogger({ primaryColor: "cyan", logFilePath: process.env.ERROR_FILE_PATH });
+export const i = Logger.icons;
+export const c = getStringedColor;
 export const { fullLogOk, fullLogNok } = log;
 
 
