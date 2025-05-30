@@ -1,6 +1,6 @@
 import { Namespace, Server, Socket } from "socket.io";
 import { ConnectedSocketClient, SocketWrapperConstructor } from "../types/socket.sptypes";
-import { fullLogNok, log } from "./_utils";
+import { fullLogNok } from "./_utils";
 
 export class SocketWrapper<Metadata extends Record<string, any> = any>
 {
@@ -58,7 +58,6 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
                     const metadata = client.handshake.query.metadata as Metadata | undefined;
                     const finalClientId = this.data.clientConnectionKey ? (metadata?.[this.data.clientConnectionKey] ?? client.id) : client.id;
                     this.connectedClients.set(finalClientId, { socket: client, connectedAt: new Date(), metadata });
-                    log.cyan(`[SOCKETWRAPPER] [${this.socketNamespace.toUpperCase()}] Client ${client.id} connected`);
                     if (this.data.afterClientConnect) this.data.afterClientConnect(this, client, metadata);
 
                     for (const eventName in this.data.listeners) client.on(eventName, (...params:any[]) => this.data.listeners?.[eventName](this, client, metadata, ...params));
@@ -84,7 +83,6 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
             if (!this.namespace) throw new Error('Socket.IO not initialized');
 
             this.connectedClients.delete(client.id);
-            log.cyan(`[SOCKETWRAPPER] [${this.socketNamespace.toUpperCase()}] Client ${client.id} disconnected`);
 
             if (this.data.onClientDisconnect) this.data.onClientDisconnect(client);
         }
@@ -151,7 +149,7 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
     }
 
     // --- GETTERS
-    public getConnectedSockets = () => Array.from(this.connectedClients.values());
+    public getConnectedSockets = () => this.connectedClients;
 
     public getClientById = (clientId: string) => this.connectedClients.get(clientId);
 
