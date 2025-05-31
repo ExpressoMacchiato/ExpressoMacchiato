@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="0.4.1"></a>
+## 0.4.1 (2025-05-31)
+
+### Added
+
+- 🔊 Updated logs [[beb56a1](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/beb56a13989df725e3788ab20d597d3cac994e11)]
+
+
 <a name="0.4.0"></a>
 ## 0.4.0 (2025-05-30)
 
