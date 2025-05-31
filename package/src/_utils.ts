@@ -19,12 +19,12 @@ class MyLogger extends Logger
     }
     fullLogNok = (service:string, ...args:any[]) =>
     {
-        let finalString = `[${service.toUpperCase()}]: `;
+        let finalString = `[${service.toUpperCase()}] `;
         for (let i = 0; i < args.length; i++) if (i === args.length - 1) finalString += (args[i] as Error)?.message ?? args[i];
         else finalString += args[i] + ' ';
 
-        this.nok(`[${service.toUpperCase()}]: ${finalString}`);
-        this.file(`[${service.toUpperCase()}]: ${finalString}`, 'error');
+        this.nok(finalString);
+        this.file(finalString, 'error');
     }
 }
 
