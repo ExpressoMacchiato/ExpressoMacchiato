@@ -1,4 +1,4 @@
-import { Namespace, Server, Socket } from "socket.io";
+import { Namespace, Server } from "socket.io";
 import { ConnectedSocketClient, SocketWrapperConstructor } from "../types/socket.sptypes";
 import { fullLogNok } from "./_utils";
 
@@ -24,8 +24,6 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
     {
         try
         {
-            if (!this.data.listeners) throw new Error('No listeners provided');
-
             this.namespace = io.of(`/${this.socketNamespace}`);
 
             // Before Connection Middleware
@@ -56,12 +54,12 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
                     if (!this.namespace) throw new Error('Socket.IO not initialized');
 
                     const metadata = client.handshake.query.metadata as Metadata | undefined;
-                    const finalClientId = this.data.clientConnectionKey ? (metadata?.[this.data.clientConnectionKey] ?? client.id) : client.id;
+                    const finalClientId:string = this.data.clientConnectionKey ? (metadata?.[this.data.clientConnectionKey] ?? client.id) : client.id;
                     this.connectedClients.set(finalClientId, { socket: client, connectedAt: new Date(), metadata });
                     if (this.data.afterClientConnect) this.data.afterClientConnect(this, client, metadata);
 
-                    for (const eventName in this.data.listeners) client.on(eventName, (...params:any[]) => this.data.listeners?.[eventName](this, client, metadata, ...params));
-                    client.on('disconnect', () => this.handleDisconnection(client));
+                    for (const eventName in this.data.listeners ?? []) client.on(eventName, (...params:any[]) => this.data.listeners?.[eventName](this, client, metadata, ...params));
+                    client.on('disconnect', () => this.handleDisconnection(finalClientId));
                 }
                 catch (err)
                 {
@@ -76,15 +74,15 @@ export class SocketWrapper<Metadata extends Record<string, any> = any>
     }
 
 
-    protected handleDisconnection = (client: Socket) =>
+    protected handleDisconnection = (clientId:string) =>
     {
         try
         {
             if (!this.namespace) throw new Error('Socket.IO not initialized');
 
-            this.connectedClients.delete(client.id);
+            this.connectedClients.delete(clientId);
 
-            if (this.data.onClientDisconnect) this.data.onClientDisconnect(this, client);
+            if (this.data.onClientDisconnect) this.data.onClientDisconnect(this, clientId);
         }
         catch (err)
         {
