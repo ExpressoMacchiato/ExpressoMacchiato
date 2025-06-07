@@ -1,11 +1,19 @@
 # Changelog
 
-<a name="0.4.1"></a>
-## 0.4.1 (2025-05-31)
+<a name="0.4.6"></a>
+## 0.4.6 (2025-06-07)
 
 ### Added
 
 - 🔊 Updated logs [[beb56a1](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/beb56a13989df725e3788ab20d597d3cac994e11)]
+
+### Changed
+
+- ♻️ Improved socket disconnection [[3d5da29](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/3d5da29ff7847f3b40583a32606ed6a689f9514c)]
+
+### Miscellaneous
+
+- 📝 Updated changelog [[3d07f12](https://github.com/ExpressoMacchiato/ExpressoMacchiato/commit/3d07f12425ab2186dbdd4e51d276f495a1a2ebef)]
 
 
 <a name="0.4.0"></a>
